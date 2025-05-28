@@ -36,10 +36,10 @@ self.addEventListener('fetch', function (event) {
   //            above (CACHE_NAME)
   event.respond(
     caches.open(CACHE_NAME).then(function (cache) {
-      return cache.match(event.request).then(function (cachedResponse) {
   // B8. TODO - If the request is in the cache, return with the cached version.
   //            Otherwise fetch the resource, add it to the cache, and return
   //            network response.
+      return cache.match(event.request).then(function (cachedResponse) {
         if (cachedResponse){
           return cachedResponse;
         }
